@@ -232,7 +232,7 @@ pub fn lc_env_no_decrypt(tokens: TokenStream) -> TokenStream {
 
     var_name = String::from(&var_name[1..var_name.len() - 1]);
 
-    encrypt_string(env::var(var_name).unwrap_or(String::from("unknown")))
+    encrypt_string_no_decrypt(env::var(var_name).unwrap_or(String::from("unknown")))
 }
 
 fn encrypt_string_no_decrypt(something: String) -> TokenStream {
